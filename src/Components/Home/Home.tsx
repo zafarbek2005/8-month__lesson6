@@ -1,7 +1,6 @@
 import React from 'react'
 import './home.scss'
 import opa from './Ellipse 2.svg'
-import aylana from './Ellipse 3.svg'
 import opa2 from './story.svg'
 
 const Home = () => {
