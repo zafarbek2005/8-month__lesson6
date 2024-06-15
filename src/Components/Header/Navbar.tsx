@@ -1,0 +1,74 @@
+import { AiOutlineShoppingCart,  AiOutlineMenu, AiOutlineClose, AiOutlineInstagram } from "react-icons/ai"; 
+import { BsFacebook } from "react-icons/bs"; 
+import React, { useState, useEffect } from 'react';
+import './Navbar.scss';
+import Logo from './logo.svg';
+import { CiHeart } from "react-icons/ci";
+
+const Navbar: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [shrink, setShrink] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setShrink(true);
+    } else {
+      setShrink(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+<>
+
+<header className={shrink ? 'shrink' : ''}>
+      <div className="Navbar container">
+        <div className="logo">
+          <img src={Logo} alt="Logo.svg" />
+        </div>
+
+        <div className={`items ${menuOpen ? 'open' : ''}`}>
+          <a href="#">ALL PRODUCTS</a>
+          <a href="#">ABOUT SEEDRA</a>
+          <a href="#">OUR BLOG</a>
+          <a href="#">CONTACTS</a>
+          <span>
+            <AiOutlineInstagram /> <BsFacebook />
+          </span>
+          <input type="search" placeholder="Search..." />
+        </div>
+
+        <div className="icons">
+          <span><CiHeart /></span>
+          <span><AiOutlineShoppingCart /></span>
+        </div>
+
+        <div className="menu-toggle" onClick={toggleMenu}>
+          {menuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+
+
+
+
+</>
+  );
+};
+
+export default Navbar;
