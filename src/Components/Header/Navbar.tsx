@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
           <a href="#">ALL PRODUCTS</a>
           <a href="#">ABOUT SEEDRA</a>
           <a href="#">OUR BLOG</a>
-          <a href="#">CONTACTS</a>
+          <a href="/contact">CONTACTS</a>
           <span>
             <AiOutlineInstagram /> <BsFacebook />
           </span>
