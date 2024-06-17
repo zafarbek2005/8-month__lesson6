@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { SiGmail } from "react-icons/si";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import Notification from '../Notifcation/Notification';

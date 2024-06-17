@@ -34,7 +34,9 @@ const Navbar: React.FC = () => {
 <header className={shrink ? 'shrink' : ''}>
       <div className="Navbar container">
         <div className="logo">
-          <img src={Logo} alt="Logo.svg" />
+        <a href="/">
+        <img src={Logo} alt="Logo.svg" />
+          </a>
         </div>
 
         <div className={`items ${menuOpen ? 'open' : ''}`}>
